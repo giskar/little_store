@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+.leader-h {
+  width: 100%;
+  background-color: #333;
+  color: #fafafa;
+  padding: 50px 10%;
+  margin: 0;
+}
+
+.user-h {
+  color: #00cccc;
+  padding-left: 25px;
+  float: left;
+  font-size: 12px;
+  width: 100%;
+}
+
+.product-container {
+  margin: 20px auto;
+  width: 80%;
+  padding: 30px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.new-product-input {
+  width: 100%;
+  height: 32px;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
+.new-product-input:focus {
+  border-color: #00cccc;
+  outline: none;
+}
+
+.btn-product {
+  margin-top: 10px;
+  background-color: #33cc00;
+  color: #fafafa;
+  font-size: 16px;
+  float: right;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-product:hover {
+  background-color: #4DE61A;
+}
+
+.btn-product:active {
+  background-color: #009900;
+}
+
+
+.btn-product_del {
+  margin-top: 10px;
+  background-color: #188023;
+  color: #fafafa;
+  font-size: 10px;
+  float: right;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-product_del:hover {
+  background-color: #00c0a4;
+}
+
+.btn-product_del:active {
+  background-color: #007600;
+}
+
+
+.product-time {
+  color: gray;
+  font-style: italic;
+  margin-bottom: 10px;
+  font-size: 8px;
+  overflow: hidden;
+   bottom: 0;
+}
+
+.product-name {
+  color: #00cccc;
+  font-style: italic;
+  margin-bottom: 10px;
+  font-size: 8px;
+  float:left;
+  margin-right:10px;
+   bottom: 0;
+}
+.product-title {
+  color: #0A6CCE;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 700;
+
+
+}
+
+.product-body {
+  font-size: 12px;
+}
+
+.div-profile {
+  margin: 20px auto;
+  width: 80%;
+  padding: 30px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ul-profile {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.li-profile {
+  /* font: 200 20px/1.5 Helvetica, Verdana, sans-serif; */
+  border-bottom: 1px solid #ccc;
+}
+.gallery {
+  position: relative;
+}
+.small-image-list {
+   position: absolute;
+   top: 0;
+   right: 0;
+
+}
+
+.small-image {
+
+  width: 50px;
+  height: 50px;
+  overflow: auto;
+
+}
+.big-image {
+
+  width:100%;
+  height:100%;
+  border-radius: 5px;
+
+
+
+
+}
+.big-image-list {
+
+  width:100%;
+  height:100%;
+  max-height: 420px;
+  border-radius: 5px;
+  overflow: hidden;
+
+
+
+}
+
+.list-reviews {
+  margin: 20px;
+
+}
+
+/*.cl1 {*/
+/*width: 95%; /!* nice *!/*/
+
+/*margin: 6px; /!* ������������ �� �������� *!/*/
+/*-moz-column-count: 3; /!* ��� Firefox *!/*/
+/*-moz-column-width: 340px;*/
+/*-moz-column-gap: 10px;*/
+/*-webkit-column-count: 3; /!* ��� Safari � Chrome *!/*/
+/*-webkit-column-width: 340px;*/
+/*-webkit-column-gap: 10px;*/
+/*column-count: 3; /!* ���������� ������� *!/*/
+/*column-width: 340px; /!* ������ ������� *!/*/
+/*column-gap: 10px; /!* ������ ������� *!/*/
+
+/*}*/
+.products-list {
+  width: 95%;
+  margin: 10px auto;
+  padding-left: 18%;
+  position: relative;
+
+
+}
+
+.cl1 {
+
+  margin: 5px;
+  height: 420px;
+  max-height: 420px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+
+
+  width: 300px;
+  /*display: inline-table;*/
+  display: inline-block;
+  position: relative;
+}
+
+.product-price {
+  color: #188023;
+  float: right;
+  bottom: 0;
+  font-size: 18px;
+
+
+}
+.product-title-bot {
+   display: block;
+   overflow: hidden;
+   width: 100%;
+   height: 80px;
+   padding: 10px;
+   position: absolute;
+    background-color: rgba(53, 70, 92, 0.2);
+
+    bottom: 0;
+}
+
+.filter_menu{
+  padding: 5px;
+  margin: 38px ;
+  margin-left: 5px;
+  margin-right: 5px;
+  left: 0;
+  display: block;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  width: 17%;
+  height: auto;
+  background-color: rgba(53, 70, 92, 0.2);
+  position: absolute;
+}
+
+input[type=number]{
+    font-size:1em;
+    width:6em;
+    padding:3px;
+    margin:auto;
+    border:1px solid #ddd;
+    border-radius:5px;
+    text-align:center;
+}
+
+
+.num-inpt{
+  margin-left: 0;
+  margin-right: 10%;
+
+}
+
+.button-buy{
+ float:right;
+
+}
+
