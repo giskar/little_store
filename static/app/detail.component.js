@@ -22,13 +22,20 @@ var DetailComponent = (function () {
                 .then(function (properti) { return _this.properti = properti; });
         });
     };
+    DetailComponent.prototype.onPost = function (review) {
+        var _this = this;
+        this.route.params.forEach(function (params) {
+            var id = +params['id'];
+            _this.heroService.Post({ product_id: id, review: review });
+        });
+    };
     DetailComponent.prototype.goBack = function () {
         window.history.back();
     };
     DetailComponent = __decorate([
         core_1.Component({
             selector: 'my-detail',
-            template: "\n    <div *ngIf=\"properti\">\n            <div class=\"img-wrap big-image-list \">\n\t\t\t\t<img width=\"300\" height=\"auto\" [src]=\"properti.images[0].image\">\n\t\t\t</div>\n\n\t\t\t<div class=\"product-title-bot\">\n                    <a (click)=\"onSelect(hero)\"> <div class=\"product-title\"> {{properti.name_product}}\n                        </div>\n                    </a>\n                <div class=\"product-price\"> {{ properti.price | currency }}\n                </div>\n            </div>\n     </div>\n\n  "
+            template: "\n    <div *ngIf=\"properti\">\n            <div class=\"img-wrap big-image-list \">\n\t\t\t\t<img width=\"300\" height=\"auto\" [src]=\"properti.images[0].image\">\n\t\t\t</div>\n\n\t\t\t<div>\n                    <a> <div class=\"product-title\"> {{properti.name_product}}\n                        </div>\n                    </a>\n                <div class=\"product-price\"> {{ properti.price | currency }}\n                </div>\n\n            </div>\n          <div >\n                    <ul class=\"list-unstyled\">\n                      <h4>Reviews</h4>\n                      <li *ngFor=\"let review of (properti.reviews)\">\n                        <blockquote class=\"list-reviews\">\n                          {{review.review}}\n                          <cite class=\"clearfix\">{{review.user}}</cite>\n                        </blockquote>\n                      </li>\n                    </ul>\n                    <ul class=\"list-unstyled\">\n                     <li *ngIf=\"properti.reviews==false\">\n                        <blockquote class=\"list-reviews\">no reviews yet</blockquote>\n                      </li>\n                    </ul>\n            </div>\n            <input type=\"text\" id=\"review\" #review>\n            <button (click)=\"onPost(review.value); ngOnInit()\">Add</button>\n     </div>\n\n  "
         })
     ], DetailComponent);
     return DetailComponent;

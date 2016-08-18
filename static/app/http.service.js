@@ -9,7 +9,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
  * Created by Troviln on 15.08.2016.
  */
 var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
 require('rxjs/Rx');
+require('rxjs/add/operator/toPromise');
 var HttpService = (function () {
     function HttpService(http) {
         this.http = http;
@@ -25,6 +27,26 @@ var HttpService = (function () {
     HttpService.prototype.getHero = function (id) {
         return this.findAll()
             .then(function (properties) { return properties.find(function (properti) { return properti.id === id; }); });
+    };
+    // Add new Hero
+    //Post(hero: {product_id: number, review: string}): Observable<any> {
+    //  const body = hero;
+    //  let headers = new Headers({
+    //    'Content-Type': 'application/json'});
+    //
+    //  return this.http
+    //             .post('http://127.0.0.1:8000/api/reviews/', body, {headers: headers})
+    //             .toPromise()
+    //             .then(res => res.json().data)
+    //             .catch(this.handleError);
+    //}
+    HttpService.prototype.Post = function (hero) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http
+            .post('http://127.0.0.1:8000/api/reviews/', JSON.stringify(hero), { headers: headers })
+            .toPromise()
+            .then(function (res) { return res.json().data; });
     };
     HttpService = __decorate([
         core_1.Injectable()
