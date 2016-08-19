@@ -44,7 +44,7 @@ var HttpService = (function () {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         return this.http
-            .post('http://127.0.0.1:8000/api/reviews/', JSON.stringify(hero), { headers: headers })
+            .post('http://127.0.0.1:8000/api/reviews/', JSON.stringify(hero || null), { headers: headers })
             .toPromise()
             .then(function (res) { return res.json().data; });
     };

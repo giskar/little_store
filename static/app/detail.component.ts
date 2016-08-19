@@ -9,10 +9,18 @@ import { HttpService } from './http.service';
 @Component({
   selector: 'my-detail',
   template: `
-    <div *ngIf="properti">
+    <div *ngIf="properti" class="product-container">
+        <div class="gallery">
             <div class="img-wrap big-image-list ">
-				<img width="300" height="auto" [src]="properti.images[0].image">
+				<img width="300" height="auto" [src]="properti.images[current].image">
 			</div>
+             <ul class="img-thumbnails clearfix small-image-list">
+                      <li class='small-image thumbnail' *ngFor="let image of properti.images; let i = index" >
+                      <img (click)="setCurrent(i)" [src]="image.image" >
+                      </li>
+             </ul>
+        </div>
+
 
 			<div>
                     <a> <div class="product-title"> {{properti.name_product}}
@@ -38,8 +46,14 @@ import { HttpService } from './http.service';
                       </li>
                     </ul>
             </div>
-            <input type="text" id="review" #review>
-            <button (click)="onPost(review.value); ngOnInit()">Add</button>
+
+             <div>
+                 <fieldset class="form-group">
+                    <textarea  class="form-control" placeholder="Write a short review of the product..." title="Review"
+                    type="text"   id="review" #review></textarea>
+                 </fieldset>
+                 <button class="btn"  (click)="onPost(review.value); ngOnInit()">Add</button>
+             </div>
      </div>
 
   `
@@ -53,6 +67,7 @@ export class DetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.current = this.current || 0 ;
     this.route.params.forEach((params: Params) => {
       let id = +params['id'];
       this.heroService.getHero(id)
@@ -68,6 +83,14 @@ export class DetailComponent implements OnInit {
         this.heroService.Post({product_id: id, review: review})
         });
       }
+
+    setCurrent(index: number) {
+        this.current = index || 0;
+        //console.log(this.current);
+
+          }
+
+
 
   goBack() {
     window.history.back();

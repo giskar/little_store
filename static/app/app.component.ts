@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   template: `
    <nav>
 
-      <a [routerLink]="['/']" routerLinkActive="active">Home</a>
+      <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
 
     </nav>
     <router-outlet></router-outlet>

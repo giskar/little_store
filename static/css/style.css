@@ -145,7 +145,7 @@ body {
 .small-image-list {
    position: absolute;
    top: 0;
-   right: 0;
+   right: 500px;
 
 }
 
@@ -278,4 +278,6 @@ input[type=number]{
  float:right;
 
 }
+.block           { margin: 2em auto; width: 60em; border: 5px solid #ccc;
+                  padding: 0.8em; background: white; }
 

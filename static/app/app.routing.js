@@ -7,12 +7,12 @@ var detail_component_1 = require('./detail.component');
 var list_coponent_1 = require('./list.coponent');
 var routes = [
     {
-        path: '',
-        redirectTo: '/',
+        path: 'home',
+        redirectTo: '/home',
         pathMatch: 'full'
     },
     {
-        path: '',
+        path: 'home',
         component: list_coponent_1.ListComponent
     },
     {

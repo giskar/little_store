@@ -8,12 +8,12 @@ import { ListComponent } from './list.coponent';
 const routes: RouterConfig = [
 
   {
-    path: '',
-    redirectTo: '/',
+    path: 'home',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
-    path: '',
+    path: 'home',
     component: ListComponent
   },
   {
