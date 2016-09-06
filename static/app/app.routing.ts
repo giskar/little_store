@@ -4,6 +4,7 @@
 import { provideRouter, RouterConfig }  from '@angular/router';
 import { DetailComponent } from './detail.component';
 import { ListComponent } from './list.coponent';
+import { ShoppingListComponent } from './shoppinglist.component';
 
 const routes: RouterConfig = [
 
@@ -21,7 +22,15 @@ const routes: RouterConfig = [
     component: DetailComponent
   },
 
+    {
+    path: 'shopping_list',
+    component: ShoppingListComponent
+  },
+
+
+
 ];
+
 
 export const appRouterProviders = [
   provideRouter(routes)

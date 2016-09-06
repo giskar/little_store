@@ -29,6 +29,8 @@ import { HttpService } from './http.service';
                 <div class="product-price"> {{ properti.price | currency }}
                 </div>
 
+            <button class="btn"  (click)="onAddToShoppingList()">Add to shoping list</button>
+
             </div>
           <div >
                     <ul class="list-unstyled">
@@ -45,6 +47,7 @@ import { HttpService } from './http.service';
                         <blockquote class="list-reviews">no reviews yet</blockquote>
                       </li>
                     </ul>
+
             </div>
 
              <div>
@@ -90,7 +93,10 @@ export class DetailComponent implements OnInit {
 
           }
 
-
+    onAddToShoppingList() {
+           this.heroService.insertItems(this.properti.name_product);
+        //console.log(this.properti.name_product);
+        }
 
   goBack() {
     window.history.back();

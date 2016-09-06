@@ -34,7 +34,9 @@ urlpatterns = [
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'home/.*$', views.index),
-    url(r'detail/.*$', views.index)
+    url(r'detail/.*$', views.index),
+     url(r'shopping_list/.*$', views.index)
+
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

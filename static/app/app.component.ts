@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
    <nav>
 
       <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+      <a [routerLink]="['/shopping_list']" routerLinkActive="active">Shopping list</a>
 
     </nav>
     <router-outlet></router-outlet>

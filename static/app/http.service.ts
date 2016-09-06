@@ -6,6 +6,8 @@ import { Http, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/toPromise';
+import {Ingredient} from './mock/ingredient';
+import {SHOPPING_LIST} from './mock/shopping-list';
 
 @Injectable()
 export class HttpService {
@@ -48,5 +50,19 @@ export class HttpService {
             .toPromise()
             .then(res => res.json().data);
   }
+
+	insertItems(items: string){
+		//Array.prototype.push.apply(SHOPPING_LIST, items);
+        SHOPPING_LIST.push(items);
+        console.log(SHOPPING_LIST);
+	}
+
+    getAllItems() {
+		return SHOPPING_LIST;
+	}
+
+    	deleteItem(item){
+		SHOPPING_LIST.splice(SHOPPING_LIST.indexOf(item), 1);
+	}
 
 }

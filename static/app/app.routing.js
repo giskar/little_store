@@ -5,6 +5,7 @@
 var router_1 = require('@angular/router');
 var detail_component_1 = require('./detail.component');
 var list_coponent_1 = require('./list.coponent');
+var shoppinglist_component_1 = require('./shoppinglist.component');
 var routes = [
     {
         path: 'home',
@@ -18,6 +19,10 @@ var routes = [
     {
         path: 'detail/:id',
         component: detail_component_1.DetailComponent
+    },
+    {
+        path: 'shopping_list',
+        component: shoppinglist_component_1.ShoppingListComponent
     },
 ];
 exports.appRouterProviders = [
